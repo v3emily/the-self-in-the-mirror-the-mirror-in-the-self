@@ -26,12 +26,9 @@ const caption2 = document.getElementById("caption2");
 
 let stream = null;
 let cameraActive = false;
-let photoTaken = false;
 
 // First click → activate camera
 mirror.addEventListener("click", async () => {
-    if (photoTaken) return;
-
     if (!cameraActive) {
         stream = await navigator.mediaDevices.getUserMedia({ video: true });
         video.srcObject = stream;
@@ -40,47 +37,10 @@ mirror.addEventListener("click", async () => {
         caption2.style.display = "block";
         cameraActive = true;
     } else {
-        capturePhoto();
-        photoTaken = true; 
+        // Camera is already active → go to next scene
+        window.location.href = "door.html";
     }
 });
-
-function capturePhoto() {
-    // Create canvas to hold the captured frame
-    const canvas = document.createElement("canvas");
-    canvas.width = video.videoWidth;
-    canvas.height = video.videoHeight;
-
-    const ctx = canvas.getContext("2d");
-    ctx.drawImage(video, 0, 0); // draw current video frame
-
-    // Freeze the image in the mirror
-    // Replace the video element with the canvas
-    video.style.display = "none";
-    canvas.id = "frozenPhoto";
-    canvas.style.width = "170%";
-    canvas.style.height = "100%";
-    canvas.style.position = "absolute";
-    canvas.style.top = "0";
-    canvas.style.left = "-11vw";
-
-    const mirror = document.getElementById("mirror");
-    mirror.appendChild(canvas);
-
-    // Optionally, stop the camera stream to save resources
-    if (stream) {
-        stream.getTracks().forEach(track => track.stop());
-    }
-
-    // Convert canvas to base64 to send to backend
-    const imageData = canvas.toDataURL("image/png");
-
-    fetch("/upload", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ image: imageData })
-    });
-}
 </script>
 
 </body>

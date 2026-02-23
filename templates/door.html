@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>The Mirror</title>
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+<body>
+<div class="main">
+    <img src="/static/assets/door_closed.PNG" class="door" id="door_closed" onclick="add_shake()">
+    <h3 class="s1_text" id="s1_text1" style="display: none;"> "Tsk, tsk. You are not ready yet, no. There's much more that must be discovered before you may face what lies beyond." </h3>
+</div>
+
+<script>
+
+const door_closed = document.getElementById("door_closed");
+const s1_text1 = document.getElementById("s1_text1");
+
+door_closed.addEventListener("click", async () => {
+    s1_text1.style.display = "block";
+});
+
+function add_shake() {
+    door_closed.classList.add('shake');
+    element.addEventListener('animationend', () => {
+        element.classList.remove('shake');
+    }, { once: true });
+}
+</script>
+
+</body>
+</html>

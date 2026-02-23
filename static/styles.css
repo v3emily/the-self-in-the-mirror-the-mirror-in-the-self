@@ -8,6 +8,12 @@ body {
     font-family: serif;
 }
 
+.h3 {
+    color: white;
+}
+
+/* Mirror page styling */
+
 .landing {
     display: flex;
     flex-direction: column;
@@ -63,6 +69,33 @@ body {
     animation-duration: 2000ms;
 }
 
+/* Door page styling */
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.door {
+    width: 100%;
+    height: auto;
+    animation-name: fadeIn;
+    animation-duration: 2000ms;
+}
+
+.shake {
+    animation-name: shake;
+    animation-duration:  0.5s;
+}
+
+.s1_text {
+    padding-top: 3vh;
+    color: rgb(178, 178, 178);
+    animation-name: fadeIn;
+    animation-duration: 2000ms;
+}
+
 /* Animations */
 @keyframes fadeIn {
   from {
@@ -71,4 +104,12 @@ body {
   to {
     opacity: 1;
   }
+}
+
+@keyframes shake {
+    0%, 100% {transform: translateX(0);}
+    20% {transform: translateX(5%);}
+    40% {transform: translateX(-5%);}
+    60% {transform: translateX(5%);}
+    80% {transform: translateX(-5%);}
 }
