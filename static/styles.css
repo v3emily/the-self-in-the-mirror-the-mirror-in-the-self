@@ -1,0 +1,74 @@
+body {
+    margin: 0;
+    height: 100vh;
+    background: rgb(27, 27, 27);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: serif;
+}
+
+.landing {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mirror-container {
+    position: relative;
+}
+
+.mirror {
+    width: 30vw;
+    height: 70vh;
+    border-radius: 80%;
+    overflow: hidden;
+    position: relative;
+    background-color: gray;
+    cursor: default;
+}
+
+.mirror:hover {
+    cursor: pointer;
+}
+
+.frame {
+    position: absolute;
+    width: 170%;
+    height: 140%;
+    top: -15vh;
+    left: -11vw;
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* Camera feed fills mirror */
+.mirror video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation-name: fadeIn;
+    animation-duration: 5000ms;
+    animation-delay: 1000ms;
+}
+
+.mirror-caption {
+    color: white;
+    padding: 5vh;
+}
+
+#caption2 {
+    display: none;
+    animation-name: fadeIn;
+    animation-duration: 2000ms;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

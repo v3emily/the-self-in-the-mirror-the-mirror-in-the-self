@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>The Mirror</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+<div class="landing">
+    <h1 style="color: white; padding: 5vh;"> the self in the mirror the mirror in the self</h1>
+    <div class="mirror-container">
+        <img src="/static/assets/frame.PNG" class="frame">
+        <div class="mirror" id="mirror">
+            <video id="camera" autoplay playsinline></video>
+        </div>
+    </div>
+    <h2 class="mirror-caption" id="caption1">Come closer.</h2>
+    <h2 class="mirror-caption" id="caption2">Look into the mirror.</h2>
+</div>
+
+<script>
+// Request camera access
+const mirror = document.getElementById("mirror");
+const video = document.getElementById("camera");
+const caption1 = document.getElementById("caption1");
+const caption2 = document.getElementById("caption2");
+
+let stream = null;
+let cameraActive = false;
+let photoTaken = false;
+
+// First click → activate camera
+mirror.addEventListener("click", async () => {
+    if (photoTaken) return;
+
+    if (!cameraActive) {
+        stream = await navigator.mediaDevices.getUserMedia({ video: true });
+        video.srcObject = stream;
+        video.style.display = "block";
+        caption1.style.display = "none";
+        caption2.style.display = "block";
+        cameraActive = true;
+    } else {
+        capturePhoto();
+        photoTaken = true; 
+    }
+});
+
+function capturePhoto() {
+    // Create canvas to hold the captured frame
+    const canvas = document.createElement("canvas");
+    canvas.width = video.videoWidth;
+    canvas.height = video.videoHeight;
+
+    const ctx = canvas.getContext("2d");
+    ctx.drawImage(video, 0, 0); // draw current video frame
+
+    // Freeze the image in the mirror
+    // Replace the video element with the canvas
+    video.style.display = "none";
+    canvas.id = "frozenPhoto";
+    canvas.style.width = "170%";
+    canvas.style.height = "100%";
+    canvas.style.position = "absolute";
+    canvas.style.top = "0";
+    canvas.style.left = "-11vw";
+
+    const mirror = document.getElementById("mirror");
+    mirror.appendChild(canvas);
+
+    // Optionally, stop the camera stream to save resources
+    if (stream) {
+        stream.getTracks().forEach(track => track.stop());
+    }
+
+    // Convert canvas to base64 to send to backend
+    const imageData = canvas.toDataURL("image/png");
+
+    fetch("/upload", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ image: imageData })
+    });
+}
+</script>
+
+</body>
+</html>
