@@ -181,6 +181,17 @@
         <h3 class="tx" id="s9_t4.1" style="display: none;">"Correct."</h3>
         <h3 class="tx" id="s9_t4.2" style="display: none;">"Finally, you are truthful to yourself."</h3>
     </div>
+    <div class="text" id="tx_s10" style="display: none;">
+        <h3 class="tx" id="s10_t1_r1.1" style="display: none;">"Hm..you're quite thorough. Did you perhaps have trouble answering my questions? Or were you simply hanging onto my every word?"</h3>
+        <h3 class="tx" id="s10_t1_r1.2" style="display: none;">"I hope you were able to properly reflect on yourself in this time. However, please remember that you know yourself far better than I. Trust yourself."</h3>
+        <h3 class="tx" id="s10_t1_r2.1" style="display: none;">"How remarkably....average."</h3>
+        <h3 class="tx" id="s10_t1_r2.2" style="display: none;">"You are interested in what I have to say, but you are not overly invested."</h3>
+        <h3 class="tx" id="s10_t1_r2.3" style="display: none;">"You know yourself well. Good."</h3>
+        <h3 class="tx" id="s10_t1_r3.1" style="display: none;">"What a hasty individual."</h3>
+        <h3 class="tx" id="s10_t1_r3.2" style="display: none;">"I can't tell if you're not taking this seriously, or if you're just very sure of yourself."</h3>
+        <h3 class="tx" id="s10_t1_r3.3" style="display: none;">"I hope you're not wasting your time by not even reading this properly."</h3>
+        <h3 class="tx" id="s10_t1_r3.4" style="display: none;">"No matter how much you avoid reflecting on yourself, those qualities are still there."</h3>
+    </div>
 </div>
 
 <script>
@@ -878,7 +889,8 @@ s9_t12.addEventListener("click", async () => {
     s9_t12.style.cursor = "default";
 });
 
-//Reference for 'Enter' detector: https://coreui.io/answers/how-to-detect-enter-key-in-javascript/#:~:text=Check%20for%20event.,to%20detect%20Enter%20key%20presses.&text=This%20code%20listens%20for%20all,form%20or%20triggering%20a%20search.
+    //Response 1
+    //Reference for 'Enter' detector: https://coreui.io/answers/how-to-detect-enter-key-in-javascript/#:~:text=Check%20for%20event.,to%20detect%20Enter%20key%20presses.&text=This%20code%20listens%20for%20all,form%20or%20triggering%20a%20search.
 input1.addEventListener('keydown', function(event) {
     if (event.code === 'Enter') {
         input1.contentEditable = "false";
@@ -892,6 +904,7 @@ s9_t21.addEventListener("click", async () => {
     s9_t21.style.cursor = "default";
 });
 
+    //Response 2
 input2.addEventListener('keydown', function(event) {
     if (event.code === 'Enter') {
         input2.contentEditable = "false";
@@ -905,6 +918,7 @@ s9_t31.addEventListener("click", async () => {
     s9_t31.style.cursor = "default";
 });
 
+    //Response 3
 input3.addEventListener('keydown', function(event) {
     if (event.code === 'Enter') {
         input3.contentEditable = "false";
@@ -916,6 +930,67 @@ input3.addEventListener('keydown', function(event) {
 s9_t41.addEventListener("click", async () => {
     s9_t42.style.display = "block";
     s9_t41.style.cursor = "default";
+});
+
+//Scene 10
+    //post-response text
+const tx_s10 = document.getElementById("tx_s10")
+const s10_t1_r11 = document.getElementById("s10_t1_r1.1")
+const s10_t1_r12 = document.getElementById("s10_t1_r1.2")
+const s10_t1_r21 = document.getElementById("s10_t1_r2.1")
+const s10_t1_r22 = document.getElementById("s10_t1_r2.2")
+const s10_t1_r23 = document.getElementById("s10_t1_r2.3")
+const s10_t1_r31 = document.getElementById("s10_t1_r3.1")
+const s10_t1_r32 = document.getElementById("s10_t1_r3.2")
+const s10_t1_r33 = document.getElementById("s10_t1_r3.3")
+const s10_t1_r34 = document.getElementById("s10_t1_r3.4")
+
+s9_t42.addEventListener("click", async () => {
+    startStop();
+
+    tx_s9.style.display = "none";
+    tx_s10.style.display = "block";
+
+    if (elapsedTime < 240000) {
+        despair_pts += 3;
+        s10_t1_r31.style.display = "block";
+    } else if (elapsedTime < 480000) {
+        despair_pts += 0;
+         s10_t1_r21.style.display = "block";
+    } else {
+        despair_pts += 1;
+        s10_t1_r11.style.display = "block";
+    }
+});
+
+s10_t1_r11.addEventListener("click", async () => {
+    s10_t1_r12.style.display = "block"
+    s10_t1_r11.style.cursor = "default"
+});
+
+s10_t1_r21.addEventListener("click", async () => {
+    s10_t1_r22.style.display = "block"
+    s10_t1_r21.style.cursor = "default"
+});
+
+s10_t1_r22.addEventListener("click", async () => {
+    s10_t1_r23.style.display = "block"
+    s10_t1_r22.style.cursor = "default"
+});
+
+s10_t1_r31.addEventListener("click", async () => {
+    s10_t1_r32.style.display = "block"
+    s10_t1_r31.style.cursor = "default"
+});
+
+s10_t1_r32.addEventListener("click", async () => {
+    s10_t1_r33.style.display = "block"
+    s10_t1_r32.style.cursor = "default"
+});
+
+s10_t1_r33.addEventListener("click", async () => {
+    s10_t1_r34.style.display = "block"
+    s10_t1_r33.style.cursor = "default"
 });
 
 </script>
