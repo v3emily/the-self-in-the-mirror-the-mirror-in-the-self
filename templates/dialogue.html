@@ -170,6 +170,17 @@
         <h3 class="tx" id="s8_t1_r5.3" style="display: none;">"What are you afraid of?"</h3>
         <h3 class="tx" id="s8_t1_r5.4" style="display: none;">"Take the leap. You never know what may be giving chase during your inactivity."</h3>
     </div>
+    <div class="text" id="tx_s9" style="display: none;">
+        <h3 class="tx" id="s9_t1.1">"Now, I need you to answer truthfully:"</h3>
+        <h3 class="tx" id="s9_t1.2" style="display: none;">"What is your deepest fear?"</h3>
+        <blockquote class="input" id="input1" contenteditable="true" style="font-style: italic; display: none;">type here...</blockquote>
+        <h3 class="tx" id="s9_t2.1" style="display: none;">"No. Not something as trivial as that. Again."</h3>
+        <blockquote class="input" id="input2" contenteditable="true" style="font-style: italic; display: none;">type here...</blockquote>
+        <h3 class="tx" id="s9_t3.1" style="display: none; word-break: break-all;">"wHatisYOurdeEpesTfearWhatisyOurDEepeStfeARwHatisyourdEepestfEar"</h3>
+        <blockquote class="input" id="input3" contenteditable="true" style="font-style: italic; display: none;">type here...</blockquote>
+        <h3 class="tx" id="s9_t4.1" style="display: none;">"Correct."</h3>
+        <h3 class="tx" id="s9_t4.2" style="display: none;">"Finally, you are truthful to yourself."</h3>
+    </div>
 </div>
 
 <script>
@@ -194,6 +205,7 @@ const s1_t2_r22 = document.getElementById("s1_t2_r2.2")
 const s1_t2_r23 = document.getElementById("s1_t2_r2.3")
 
     //timer
+    //Reference for time counter: https://tinloof.com/blog/how-to-build-a-stopwatch-with-html-css-js-react-part-2
     let elapsedTime = 0;
     let isRunning = false;
 
@@ -814,6 +826,97 @@ s8_t1_r53.addEventListener("click", async () => {
     s8_t1_r53.style.cursor = "default";
 });
 
+//Scene 9
+    //text
+const tx_s9 = document.getElementById("tx_s9")
+const s9_t11 = document.getElementById("s9_t1.1")
+const s9_t12 = document.getElementById("s9_t1.2")
+
+    //response
+const input1 = document.getElementById("input1")
+const input2 = document.getElementById("input2")
+const input3 = document.getElementById("input3")
+
+    //post-response text
+const s9_t21 = document.getElementById("s9_t2.1")
+const s9_t31 = document.getElementById("s9_t3.1")
+const s9_t41 = document.getElementById("s9_t4.1")
+const s9_t42 = document.getElementById("s9_t4.2")
+
+s8_t1_r15.addEventListener("click", async () => {
+    tx_s8.style.display = "none";
+    tx_s9.style.display = "block"
+});
+
+s8_t1_r24.addEventListener("click", async () => {
+    tx_s8.style.display = "none";
+    tx_s9.style.display = "block"
+});
+
+s8_t1_r34.addEventListener("click", async () => {
+    tx_s8.style.display = "none";
+    tx_s9.style.display = "block"
+});
+
+s8_t1_r44.addEventListener("click", async () => {
+    tx_s8.style.display = "none";
+    tx_s9.style.display = "block"
+});
+
+s8_t1_r54.addEventListener("click", async () => {
+    tx_s8.style.display = "none";
+    tx_s9.style.display = "block"
+});
+
+s9_t11.addEventListener("click", async () => {
+    s9_t12.style.display = "block";
+    s9_t11.style.cursor = "default";
+});
+
+s9_t12.addEventListener("click", async () => {
+    input1.style.display = "block";
+    s9_t12.style.cursor = "default";
+});
+
+//Reference for 'Enter' detector: https://coreui.io/answers/how-to-detect-enter-key-in-javascript/#:~:text=Check%20for%20event.,to%20detect%20Enter%20key%20presses.&text=This%20code%20listens%20for%20all,form%20or%20triggering%20a%20search.
+input1.addEventListener('keydown', function(event) {
+    if (event.code === 'Enter') {
+        input1.contentEditable = "false";
+        input1.style.fontStyle = "normal";
+        s9_t21.style.display = "block";
+    }
+});
+
+s9_t21.addEventListener("click", async () => {
+    input2.style.display = "block";
+    s9_t21.style.cursor = "default";
+});
+
+input2.addEventListener('keydown', function(event) {
+    if (event.code === 'Enter') {
+        input2.contentEditable = "false";
+        input2.style.fontStyle = "normal";
+        s9_t31.style.display = "block";
+    }
+});
+
+s9_t31.addEventListener("click", async () => {
+    input3.style.display = "block";
+    s9_t31.style.cursor = "default";
+});
+
+input3.addEventListener('keydown', function(event) {
+    if (event.code === 'Enter') {
+        input3.contentEditable = "false";
+        input3.style.fontStyle = "normal";
+        s9_t41.style.display = "block";
+    }
+});
+
+s9_t41.addEventListener("click", async () => {
+    s9_t42.style.display = "block";
+    s9_t41.style.cursor = "default";
+});
 
 </script>
 
