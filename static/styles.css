@@ -224,6 +224,31 @@ body {
     margin-left: 3vw;
 }
 
+/* Room styling */
+.couch {
+    width: 100vw;
+    height: auto;
+    position: absolute;
+    top: -10vh;
+    z-index: 1;
+}
+
+.plant {
+    width: 100vw;
+    height: auto;
+    position: absolute;
+    top: -10vh;
+    z-index: 1;
+}
+
+.photo {
+    width: 100vw;
+    height: auto;
+    position: absolute;
+    top: -10vh;
+    z-index: 1;
+}
+
 /* Animations */
 @keyframes fadeIn {
   from {

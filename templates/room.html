@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>The Mirror</title>
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+<body>
+<div class="wrapper">
+    <div class="bg_wrapper">
+        <img src="/static/assets/room.PNG" class="bg" id="bg">
+        <img src="/static/assets/couch.PNG" class="couch" id="couch">
+        <img src="/static/assets/plant.PNG" class="plant" id="plant">
+        <img src="/static/assets/photo.PNG" class="photo" id="photo">
+    </div>
+    <div class="final_text" id="tx_s12.1" style="z-index: 2;">
+        <h3 class="fr" id="s12_r1.1" >What is this?</h3>
+        <h3 class="ft" id="s12_t1.1" style="display: none;" >"Can't you see? it's everything you've been working for--"</h3>
+        <h3 class="ft" id="s12_t1.2" style="display: none;" >"It's freedom."</h3>
+        <h3 class="ft" id="s12_t1.3" style="display: none;" >"It's peace."</h3>
+        <h3 class="ft" id="s12_t1.4" style="display: none;" >"You are...balanced. Your mindscape reflects that."</h3>
+        <h3 class="ft" id="s12_t1.5" style="display: none;" >"This place is your home. Where you feel safe. Content."</h3>
+        <h3 class="ft" id="s12_t1.6" style="display: none;" >"You have worked hard. Now, there are things you can call yours."</h3>
+        <h3 class="fr" id="s12_r2.1" style="display: none;">Thank you.</h3>
+    </div>
+    <div class="final_text" id="tx_s12.2"  style="display: none;">
+        <h3 class="ft" id="s12_t2.1">The sofa invitingly envelopes you. You imagine spending many an evening on the soft cushions.</h3>
+    </div>
+    <div class="final_text" id="tx_s12.3"  style="display: none;">
+        <h3 class="ft" id="s12_t3.1">Photos of yourself and your loved ones fill the home. It seems that you are surrounded by warmth.</h3>
+    </div>
+    <div class="final_text" id="tx_s12.4"  style="display: none;">
+        <h3 class="ft" id="s12_t4.1" >A vibrant green houseplant catches your eye. It is very well cared for.</h3>
+    </div>
+    <div class="final_text" id="tx_s12.5" style="display: none;">
+        <h3 class="ft" id="s12_t5.1">It's time to go.</h3>
+        <h3 class="ft" id="s12_t5.2" style="display: none;" >"...Oh? You're already returning?"</h3>
+        <h3 class="ft" id="s12_t5.3" style="display: none;" >"How surprising. I anticipated a longer stay."</h3>
+        <h3 class="ft" id="s12_t5.4" style="display: none;" >"No matter. If that is what you wish, I will respect it."</h3>
+        <h3 class="ft" id="s12_t5.5" style="display: none;" >"Thank you for making this visit."</h3>
+        <h3 class="fr" id="s12_r5.1" style="display: none;">Wait! Who even are you?</h3>
+        <h3 class="ft" id="s12_t5.6" style="display: none;" >"Me? What a silly question."</h3>
+        <h3 class="ft" id="s12_t5.7" style="display: none;" >"You already know."</h3>
+    </div>
+    
+    </div>
+</div>
+<script>
+const bg = document.getElementById("bg")
+const couch = document.getElementById("couch")
+const plant = document.getElementById("plant")
+const photo = document.getElementById("photo")
+const tx_s121 = document.getElementById("tx_s12.1")
+const s12_r11 = document.getElementById("s12_r1.1")
+const s12_t11 = document.getElementById("s12_t1.1")
+const s12_t12 = document.getElementById("s12_t1.2")
+const s12_t13 = document.getElementById("s12_t1.3")
+const s12_t14 = document.getElementById("s12_t1.4")
+const s12_t15 = document.getElementById("s12_t1.5")
+const s12_t16 = document.getElementById("s12_t1.6")
+const s12_r21 = document.getElementById("s12_r2.1")
+
+const tx_s122 = document.getElementById("tx_s12.2")
+const s12_t21 = document.getElementById("s12_t2.1")
+
+const tx_s123 = document.getElementById("tx_s12.3")
+const s12_t31 = document.getElementById("s12_t3.1")
+
+const tx_s124 = document.getElementById("tx_s12.4")
+const s12_t41 = document.getElementById("s12_t4.1")
+
+const tx_s125 = document.getElementById("tx_s12.5")
+const s12_t51 = document.getElementById("s12_t5.1")
+const s12_t52 = document.getElementById("s12_t5.2")
+const s12_t53 = document.getElementById("s12_t5.3")
+const s12_t54 = document.getElementById("s12_t5.4")
+const s12_t55 = document.getElementById("s12_t5.5")
+const s12_r51 = document.getElementById("s12_r5.1")
+const s12_t56 = document.getElementById("s12_t5.6")
+const s12_t57 = document.getElementById("s12_t5.7")
+
+s12_r11.addEventListener("click", async () => {
+    s12_t11.style.display = "block";
+    s12_r11.style.cursor = "default";
+});
+
+s12_t11.addEventListener("click", async () => {
+    s12_t12.style.display = "block";
+    s12_t11.style.cursor = "default";
+});
+
+s12_t12.addEventListener("click", async () => {
+    s12_t13.style.display = "block";
+    s12_t12.style.cursor = "default";
+});
+
+s12_t13.addEventListener("click", async () => {
+    s12_t14.style.display = "block";
+    s12_t13.style.cursor = "default";
+});
+
+s12_t14.addEventListener("click", async () => {
+    s12_t15.style.display = "block";
+    s12_t14.style.cursor = "default";
+});
+
+s12_t15.addEventListener("click", async () => {
+    s12_t16.style.display = "block";
+    s12_t15.style.cursor = "default";
+});
+
+s12_t16.addEventListener("click", async () => {
+    s12_r21.style.display = "block";
+    s12_t16.style.cursor = "default";
+});
+
+s12_r21.addEventListener("click", async () => {
+    tx_s121.style.display = "none";
+});
+
+let collected = 0
+let hasCouch = false
+let hasPlant = false
+let hasPhoto = false
+
+//Couch
+couch.addEventListener("click", async () => {
+    if (!hasCouch) {
+        collected += 1;
+        tx_s122.style.display = "block";
+        couch.style.pointerEvents = "none";
+    }
+});
+
+tx_s122.addEventListener("click", async () => {
+    tx_s122.style.display = "none";
+    if (collected == 3) {
+        tx_s125.style.display = "block"
+;    }
+});
+
+//Plant
+plant.addEventListener("click", async () => {
+    if (!hasPlant) {
+        collected += 1;
+        tx_s123.style.display = "block";
+        plant.style.pointerEvents = "none";
+    }
+});
+
+tx_s123.addEventListener("click", async () => {
+    tx_s123.style.display = "none";
+    if (collected == 3) {
+        tx_s125.style.display = "block"
+;    }
+});
+
+//Photo
+photo.addEventListener("click", async () => {
+    if (!hasPhoto) {
+        collected += 1;
+        tx_s124.style.display = "block";
+        photo.style.pointerEvents = "none";
+    }
+});
+
+tx_s124.addEventListener("click", async () => {
+    tx_s124.style.display = "none";
+    if (collected == 3) {
+        tx_s125.style.display = "block"
+;    }
+});
+
+s12_t51.addEventListener("click", async () => {
+    s12_t52.style.display = "block"
+    s12_t51.style.cursor = "default"
+});
+
+s12_t52.addEventListener("click", async () => {
+    s12_t53.style.display = "block"
+    s12_t52.style.cursor = "default"
+});
+
+s12_t53.addEventListener("click", async () => {
+    s12_t54.style.display = "block"
+    s12_t53.style.cursor = "default"
+});
+
+s12_t54.addEventListener("click", async () => {
+    s12_t55.style.display = "block"
+    s12_t54.style.cursor = "default"
+});
+
+s12_t55.addEventListener("click", async () => {
+    s12_r51.style.display = "block"
+    s12_t55.style.cursor = "default"
+});
+
+s12_r51.addEventListener("click", async () => {
+    s12_t56.style.display = "block"
+    s12_r51.style.cursor = "default"
+});
+
+s12_t56.addEventListener("click", async () => {
+    s12_t57.style.display = "block"
+    s12_t56.style.cursor = "default"
+});
+
+s12_t57.addEventListener("click", async () => {
+    window.location.href="mirror.html";
+});
+
+</script>
+
+</body>
+</html>
