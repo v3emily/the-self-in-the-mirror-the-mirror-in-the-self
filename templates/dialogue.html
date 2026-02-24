@@ -400,7 +400,6 @@ s3_r1_6.addEventListener("click", async () => {
 s3_t21.addEventListener("click", async () => {
     s3_t22.style.display = "block";
     s3_t21.style.cursor = "default";
-    console.log(`despair pts: ${despair_pts}`)
 });
 
 s3_t22.addEventListener("click", async () => {
@@ -961,36 +960,51 @@ s9_t42.addEventListener("click", async () => {
         despair_pts += 1;
         s10_t1_r11.style.display = "block";
     }
+    console.log(`despair pts: ${despair_pts}`)
+    localStorage.setItem("despair_pts", despair_pts);
 });
 
 s10_t1_r11.addEventListener("click", async () => {
-    s10_t1_r12.style.display = "block"
-    s10_t1_r11.style.cursor = "default"
+    s10_t1_r12.style.display = "block";
+    s10_t1_r11.style.cursor = "default";
 });
 
 s10_t1_r21.addEventListener("click", async () => {
-    s10_t1_r22.style.display = "block"
-    s10_t1_r21.style.cursor = "default"
+    s10_t1_r22.style.display = "block";
+    s10_t1_r21.style.cursor = "default";
 });
 
 s10_t1_r22.addEventListener("click", async () => {
-    s10_t1_r23.style.display = "block"
-    s10_t1_r22.style.cursor = "default"
+    s10_t1_r23.style.display = "block";
+    s10_t1_r22.style.cursor = "default";
 });
 
 s10_t1_r31.addEventListener("click", async () => {
-    s10_t1_r32.style.display = "block"
-    s10_t1_r31.style.cursor = "default"
+    s10_t1_r32.style.display = "block";
+    s10_t1_r31.style.cursor = "default";
 });
 
 s10_t1_r32.addEventListener("click", async () => {
-    s10_t1_r33.style.display = "block"
-    s10_t1_r32.style.cursor = "default"
+    s10_t1_r33.style.display = "block";
+    s10_t1_r32.style.cursor = "default";
 });
 
 s10_t1_r33.addEventListener("click", async () => {
-    s10_t1_r34.style.display = "block"
-    s10_t1_r33.style.cursor = "default"
+    s10_t1_r34.style.display = "block";
+    s10_t1_r33.style.cursor = "default";
+});
+
+//Scene 10
+s10_t1_r12.addEventListener("click", async () => {
+    window.location.href="return.html";
+});
+
+s10_t1_r23.addEventListener("click", async () => {
+    window.location.href="return.html";
+});
+
+s10_t1_r34.addEventListener("click", async () => {
+    window.location.href="return.html";
 });
 
 </script>

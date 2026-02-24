@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>The Mirror</title>
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+<body>
+<div class="main">
+    <img src="/static/assets/door_closed.PNG" class="door" id="door_closed">
+    <img src="/static/assets/door_open.PNG" class="door" id="door_open" style="display: none;">
+    <h3 class="s11_text" id="s11_text1"> "In any case, you are now ready. Open the door." </h3>
+    <h3 class="s11_response" id="s11_r1" style="display: none;">Finally!</h3>
+</div>
+
+<script>
+
+const door_closed = document.getElementById("door_closed");
+const door_open = document.getElementById("door_open")
+const s11_text1 = document.getElementById("s11_text1");
+const s11_r1 = document.getElementById("s11_r1")
+
+s11_text1.addEventListener("click", async () => {
+    s11_text1.style.display = "none";
+    s11_r1.style.display = "block";
+});
+
+s11_r1.addEventListener("click", async () => {
+    door_closed.style.display = "none";
+    door_open.style.display = "block";
+    s11_r1.style.pointerEvents = "none";
+});
+
+door_open.addEventListener("click", async () => {
+    window.location.href="beach.html";
+});
+
+</script>
+
+</body>
+</html>

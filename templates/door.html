@@ -28,9 +28,6 @@ door_closed.addEventListener("click", async () => {
 
 function add_shake() {
     door_closed.classList.add('shake');
-    element.addEventListener('animationend', () => {
-        element.classList.remove('shake');
-    }, { once: true });
 }
 </script>
 
