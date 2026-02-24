@@ -70,6 +70,48 @@
             <h3 class="rs" id="s3_r2">. . .</h3>
         </div>
     </div>
+    <div class="text" id="tx_s4" style="display: none;">
+        <div class="response-select" id="rs_sl_s3.2" style="cursor: default;">
+            <h3 class="rs-sl" id="s3_rs2">. . .</h3>
+        </div>
+        <h3 class="tx" id="s4_t1.1">"Onto the next, now! Please, tell me:"</h3>
+        <h3 class="tx" id="s4_t1.2" style="display: none;">"How do you spend your weekends?"</h3>
+        <div class="response" id="rs_s4.1" style="display: none;">
+            <h3 class="rs" id="s4_r1.1">Resting at home</h3>
+            <h3 class="rs" id="s4_r1.2">Spending time with friends or family</h3>
+            <h3 class="rs" id="s4_r1.3">Going out and doing an activity</h3>
+        </div>
+    </div>
+    <div class="text" id="tx_s5" style="display: none;">
+        <div class="response-select" id="rs_sl_s4.1" style="cursor: default;">
+            <h3 class="rs-sl" id="s4_rs1" style="display: none;">Resting at home</h3>
+            <h3 class="rs-sl" id="s4_rs2" style="display: none;">Spending time with friends or family</h3>
+            <h3 class="rs-sl" id="s4_rs3" style="display: none;">Going out and doing an activity</h3>
+        </div>
+        <h3 class="tx" id="s5_t1.1">"Is that right? How utterly...predictable."</h3>
+        <h3 class="tx" id="s5_t1.2" style="display: none;">"Well then, please tell me:"</h3>
+        <h3 class="tx" id="s5_t1.3" style="display: none;">"How do you approach solving a problem?"</h3>
+        <div class="response" id="rs_s5.1" style="display: none;">
+            <h3 class="rs" id="s5_r1.1">Analyze the details and thoroughly plan</h3>
+            <h3 class="rs" id="s5_r1.2">Ask someone for help</h3>
+            <h3 class="rs" id="s5_r1.3">Trying out a solution instinctively</h3>
+        </div>
+    </div>
+    <div class="text" id="tx_s6" style="display: none;">
+        <div class="response-select" id="rs_sl_s5.1" style="cursor: default;">
+            <h3 class="rs-sl" id="s5_rs1.1" style="display: none;">Analyze the details and thoroughly plan</h3>
+            <h3 class="rs-sl" id="s5_rs1.2" style="display: none;">Ask someone for help</h3>
+            <h3 class="rs-sl" id="s5_rs1.3" style="display: none;">Trying out a solution instinctively</h3>
+        </div>
+        <h3 class="tx" id="s6_t1.1">"Interesting. I suppose you've made it thus far and it's worked out for you..."</h3>
+        <h3 class="tx" id="s6_t1.2" style="display: none;">"Next, please tell me:"</h3>
+        <h3 class="tx" id="s6_t1.3" style="display: none;">"Do you dwell most on the past, present, or future?"</h3>
+        <div class="response" id="rs_s6.1" style="display: none;">
+            <h3 class="rs" id="s6_r1.1">Past</h3>
+            <h3 class="rs" id="s6_r1.2">Present</h3>
+            <h3 class="rs" id="s6_r1.3">Future</h3>
+        </div>
+    </div>
 </div>
 
 <script>
@@ -203,6 +245,9 @@ const s3_rs16 = document.getElementById("s3_rs1.6")
 const s3_t21 = document.getElementById("s3_t2.1")
 const s3_t22 = document.getElementById("s3_t2.2")
 
+    //despair counter
+    let despair_pts = 0;
+
 rs_s2.addEventListener("click", async () => {
     tx_s2.style.display = "none";
     tx_s3.style.display = "block";
@@ -225,6 +270,7 @@ s3_r1_1.addEventListener("click", async () => {
     rs_sl_s3.style.display = "block";
     s3_rs11.style.display = "block";
     s3_t21.style.display = "block";
+    despair_pts +=1;
 });
 
     //Response 2
@@ -233,6 +279,7 @@ s3_r1_2.addEventListener("click", async () => {
     rs_sl_s3.style.display = "block";
     s3_rs12.style.display = "block";
     s3_t21.style.display = "block";
+    despair_pts +=1;
 });
 
     //Response 3
@@ -241,6 +288,7 @@ s3_r1_3.addEventListener("click", async () => {
     rs_sl_s3.style.display = "block";
     s3_rs13.style.display = "block";
     s3_t21.style.display = "block";
+    despair_pts +=3;
 });
 
     //Response 4
@@ -265,17 +313,156 @@ s3_r1_6.addEventListener("click", async () => {
     rs_sl_s3.style.display = "block";
     s3_rs16.style.display = "block";
     s3_t21.style.display = "block";
+    despair_pts +=3;
 });
 
 s3_t21.addEventListener("click", async () => {
     s3_t22.style.display = "block";
     s3_t21.style.cursor = "default";
+    console.log(`despair pts: ${despair_pts}`)
 });
 
 s3_t22.addEventListener("click", async () => {
     rs_s32.style.display = "block";
     s3_r2.style.display = "block";
     s3_t22.style.cursor = "default";
+});
+
+//Scene 4 paths
+    //text
+const tx_s4 = document.getElementById("tx_s4")
+const rs_sl_s32 = document.getElementById("rs_sl_s3.2")
+const s4_t11 = document.getElementById("s4_t1.1")
+const s4_t12 = document.getElementById("s4_t1.2")
+
+    //response
+const rs_s41 = document.getElementById("rs_s4.1")
+const s4_r11 = document.getElementById("s4_r1.1")
+const s4_r12 = document.getElementById("s4_r1.2")
+const s4_r13 = document.getElementById("s4_r1.3")
+
+s3_r2.addEventListener("click", async () => {
+    tx_s3.style.display = "none";
+    tx_s4.style.display = "block";
+});
+
+s4_t11.addEventListener("click", async () => {
+    s4_t12.style.display = "block";
+    s4_t11.style.cursor = "default";
+});
+
+s4_t12.addEventListener("click", async () => {
+    rs_s41.style.display = "block";
+    s4_t12.style.cursor = "default";
+});
+
+//Scene 5 paths
+    //text
+const tx_s5 = document.getElementById("tx_s5")
+const rs_sl_s41 = document.getElementById("rs_sl_s4.1")
+const s4_rs1 = document.getElementById("s4_rs1")
+const s4_rs2 = document.getElementById("s4_rs2")
+const s4_rs3 = document.getElementById("s4_rs3")
+const s5_t11 = document.getElementById("s5_t1.1")
+const s5_t12 = document.getElementById("s5_t1.2")
+const s5_t13 = document.getElementById("s5_t1.3")
+
+    //response
+const rs_s51 = document.getElementById("rs_s5.1")
+const s5_r11 = document.getElementById("s5_r1.1")
+const s5_r12 = document.getElementById("s5_r1.2")
+const s5_r13 = document.getElementById("s5_r1.3")
+
+    //Response 1
+s4_r11.addEventListener("click", async () => {
+    tx_s4.style.display = "none";
+    tx_s5.style.display = "block";
+    s4_rs1.style.display = "block";
+    despair_pts += 3;
+});
+
+    //Response 2
+s4_r12.addEventListener("click", async () => {
+    tx_s4.style.display = "none";
+    tx_s5.style.display = "block";
+    s4_rs2.style.display = "block";
+});
+
+    //Response 3
+s4_r13.addEventListener("click", async () => {
+    tx_s4.style.display = "none";
+    tx_s5.style.display = "block";
+    s4_rs3.style.display = "block";
+    despair_pts += 1;
+});
+
+s5_t11.addEventListener("click", async () => {
+    s5_t12.style.display = "block";
+    s5_t11.style.cursor = "default";
+});
+
+s5_t12.addEventListener("click", async () => {
+    s5_t13.style.display = "block";
+    s5_t12.style.cursor = "default";
+});
+
+s5_t13.addEventListener("click", async () => {
+    rs_s51.style.display = "block";
+    s5_t13.style.cursor = "default";
+});
+
+//Scene 6 paths
+    //text
+const tx_s6 = document.getElementById("tx_s6")
+const rs_sl_s51 = document.getElementById("rs_sl_s5.1")
+const s5_rs11 = document.getElementById("s5_rs1.1")
+const s5_rs12 = document.getElementById("s5_rs1.2")
+const s5_rs13 = document.getElementById("s5_rs1.3")
+const s6_t11 = document.getElementById("s6_t1.1")
+const s6_t12 = document.getElementById("s6_t1.2")
+const s6_t13 = document.getElementById("s6_t1.3")
+    //response
+const rs_s61 = document.getElementById("rs_s6.1")
+const s6_r11 = document.getElementById("s6_r1.1")
+const s6_r12 = document.getElementById("s6_r1.2")
+const s6_r13 = document.getElementById("s6_r1.3")
+
+    //Response 1
+s5_r11.addEventListener("click", async () => {
+    tx_s5.style.display = "none";
+    tx_s6.style.display = "block";
+    s5_rs11.style.display = "block";
+    despair_pts += 3;
+});
+
+    //Response 2
+s5_r12.addEventListener("click", async () => {
+    tx_s5.style.display = "none";
+    tx_s6.style.display = "block";
+    s5_rs12.style.display = "block";
+});
+
+    //Response 3
+s5_r13.addEventListener("click", async () => {
+    tx_s5.style.display = "none";
+    tx_s6.style.display = "block";
+    s5_rs13.style.display = "block";
+    despair_pts += 1;
+});
+
+s6_t11.addEventListener("click", async () => {
+    s6_t12.style.display = "block";
+    s6_t11.style.cursor = "default";
+});
+
+s6_t12.addEventListener("click", async () => {
+    s6_t13.style.display = "block";
+    s6_t12.style.cursor = "default";
+});
+
+s6_t13.addEventListener("click", async () => {
+    rs_s61.style.display = "block";
+    s6_t13.style.cursor = "default";
 });
 
 </script>
