@@ -112,6 +112,26 @@
             <h3 class="rs" id="s6_r1.3">Future</h3>
         </div>
     </div>
+    <div class="text" id="tx_s7" style="display: none;">
+        <div class="response-select" id="rs_sl_s6.1" style="cursor: default;">
+            <h3 class="rs-sl" id="s6_rs1.1" style="display: none;">Past</h3>
+            <h3 class="rs-sl" id="s6_rs1.2" style="display: none;">Present</h3>
+            <h3 class="rs-sl" id="s6_rs1.3" style="display: none;">Future</h3>
+        </div>
+        <h3 class="tx" id="s7_t1_r1.1" style="display: none;">"Sentimental now, aren't we?"</h3>
+        <h3 class="tx" id="s7_t1_r1.2" style="display: none;">"You must stop with those regrets."</h3>
+        <h3 class="tx" id="s7_t1_r1.3" style="display: none;">"About what changed. About what could have been."</h3>
+        <h3 class="tx" id="s7_t1_r1.4" style="display: none;">"Those things, those feelings can never return to you now."</h3>
+        <h3 class="tx" id="s7_t1_r2.1" style="display: none;">"You're comfortable."</h3>
+        <h3 class="tx" id="s7_t1_r2.2" style="display: none;">"Nothing remarkable about the past, and not urged by the future."</h3>
+        <h3 class="tx" id="s7_t1_r2.3" style="display: none;">"You're not running away, are you?"</h3>
+        <h3 class="tx" id="s7_t1_r2.4" style="display: none;">"...well, nothing wrong with that, I suppose."</h3>
+        <h3 class="tx" id="s7_t1_r3.1" style="display: none;">"A brave soul you are, to brave the unknown. To find comfort in uncertainty."</h3>
+        <h3 class="tx" id="s7_t1_r3.2" style="display: none;">"But you are forgetting something, aren't you? That to earn the future, you must first live the present."</h3>
+        <h3 class="tx" id="s7_t1_r3.3" style="display: none;">"And all past was once the future."</h3>
+        <h3 class="tx" id="s7_t1_r3.4" style="display: none;">"One day, when you fall back to the present, you'd do best to brace for impact."</h3>
+        <h3 class="tx" id="s7_t1_r3.5" style="display: none;">"But of course, it is always necessary to dream."</h3>
+    </div>
 </div>
 
 <script>
@@ -463,6 +483,105 @@ s6_t12.addEventListener("click", async () => {
 s6_t13.addEventListener("click", async () => {
     rs_s61.style.display = "block";
     s6_t13.style.cursor = "default";
+});
+
+//Scene 7 paths
+    //text
+const tx_s7 = document.getElementById("tx_s7")
+const rs_sl_s61 = document.getElementById("rs_sl_s5.1")
+const s6_rs11 = document.getElementById("s6_rs1.1")
+const s6_rs12 = document.getElementById("s6_rs1.2")
+const s6_rs13 = document.getElementById("s6_rs1.3")
+
+    //post-response text
+const s7_t1_r11 = document.getElementById("s7_t1_r1.1")
+const s7_t1_r12 = document.getElementById("s7_t1_r1.2")
+const s7_t1_r13 = document.getElementById("s7_t1_r1.3")
+const s7_t1_r14 = document.getElementById("s7_t1_r1.4")
+
+const s7_t1_r21 = document.getElementById("s7_t1_r2.1")
+const s7_t1_r22 = document.getElementById("s7_t1_r2.2")
+const s7_t1_r23 = document.getElementById("s7_t1_r2.3")
+const s7_t1_r24 = document.getElementById("s7_t1_r2.4")
+
+const s7_t1_r31 = document.getElementById("s7_t1_r3.1")
+const s7_t1_r32 = document.getElementById("s7_t1_r3.2")
+const s7_t1_r33 = document.getElementById("s7_t1_r3.3")
+const s7_t1_r34 = document.getElementById("s7_t1_r3.4")
+const s7_t1_r35 = document.getElementById("s7_t1_r3.5")
+
+    //Response 1
+s6_r11.addEventListener("click", async () => {
+    tx_s6.style.display = "none";
+    tx_s7.style.display = "block";
+    s6_rs11.style.display = "block";
+    s7_t1_r11.style.display = "block";
+});
+
+s7_t1_r11.addEventListener("click", async () => {
+    s7_t1_r12.style.display = "block";
+    s7_t1_r11.style.cursor = "default";
+});
+
+s7_t1_r12.addEventListener("click", async () => {
+    s7_t1_r13.style.display = "block";
+    s7_t1_r12.style.cursor = "default";
+});
+
+s7_t1_r13.addEventListener("click", async () => {
+    s7_t1_r14.style.display = "block";
+    s7_t1_r13.style.cursor = "default";
+});
+
+    //Response 2
+s6_r12.addEventListener("click", async () => {
+    tx_s6.style.display = "none";
+    tx_s7.style.display = "block";
+    s6_rs12.style.display = "block";
+    s7_t1_r21.style.display = "block";
+});
+
+s7_t1_r21.addEventListener("click", async () => {
+    s7_t1_r22.style.display = "block";
+    s7_t1_r21.style.cursor = "default";
+});
+
+s7_t1_r22.addEventListener("click", async () => {
+    s7_t1_r23.style.display = "block";
+    s7_t1_r22.style.cursor = "default";
+});
+
+s7_t1_r23.addEventListener("click", async () => {
+    s7_t1_r24.style.display = "block";
+    s7_t1_r23.style.cursor = "default";
+});
+
+    //Response 3
+s6_r13.addEventListener("click", async () => {
+    tx_s6.style.display = "none";
+    tx_s7.style.display = "block";
+    s6_rs13.style.display = "block";
+    s7_t1_r31.style.display = "block";
+});
+
+s7_t1_r31.addEventListener("click", async () => {
+    s7_t1_r32.style.display = "block";
+    s7_t1_r31.style.cursor = "default";
+});
+
+s7_t1_r32.addEventListener("click", async () => {
+    s7_t1_r33.style.display = "block";
+    s7_t1_r32.style.cursor = "default";
+});
+
+s7_t1_r33.addEventListener("click", async () => {
+    s7_t1_r34.style.display = "block";
+    s7_t1_r33.style.cursor = "default";
+});
+
+s7_t1_r34.addEventListener("click", async () => {
+    s7_t1_r35.style.display = "block";
+    s7_t1_r34.style.cursor = "default";
 });
 
 </script>
