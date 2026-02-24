@@ -18,6 +18,8 @@ const door_closed = document.getElementById("door_closed");
 const door_open = document.getElementById("door_open")
 const s11_text1 = document.getElementById("s11_text1");
 const s11_r1 = document.getElementById("s11_r1")
+const despair_pts = localStorage.getItem("despair_pts");
+console.log(despair_pts);
 
 s11_text1.addEventListener("click", async () => {
     s11_text1.style.display = "none";
@@ -31,7 +33,11 @@ s11_r1.addEventListener("click", async () => {
 });
 
 door_open.addEventListener("click", async () => {
-    window.location.href="beach.html";
+    if (despair_pts < 9) {
+        window.location.href="beach.html";
+    } else {
+        window.location.href="empty.html";
+    }
 });
 
 </script>
