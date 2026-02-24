@@ -132,6 +132,44 @@
         <h3 class="tx" id="s7_t1_r3.4" style="display: none;">"One day, when you fall back to the present, you'd do best to brace for impact."</h3>
         <h3 class="tx" id="s7_t1_r3.5" style="display: none;">"But of course, it is always necessary to dream."</h3>
     </div>
+    <div class="text" id="tx_s8" style="display: none;">
+        <h3 class="tx" id="s8_t1">"What is your MBTI?"</h3>
+        <div class="response" id="rs_s8.1" style="display: none;">
+            <h3 class="rs" id="s8_r1.1">Don't know</h3>
+            <h3 class="rs" id="s8_r1.2">E--J</h3>
+            <h3 class="rs" id="s8_r1.3">I--J</h3>
+            <h3 class="rs" id="s8_r1.4">E--P</h3>
+            <h3 class="rs" id="s8_r1.5">I--P</h3>
+        </div>
+        <div class="response-select" id="rs_sl_s8.1" style="cursor: default; display: none;">
+            <h3 class="rs-sl" id="s8_rs1.1" style="display: none;">Don't know</h3>
+            <h3 class="rs-sl" id="s8_rs1.2" style="display: none;">E--J</h3>
+            <h3 class="rs-sl" id="s8_rs1.3" style="display: none;">I--J</h3>
+            <h3 class="rs-sl" id="s8_rs1.4" style="display: none;">E--P</h3>
+            <h3 class="rs-sl" id="s8_rs1.5" style="display: none;">I--P</h3>
+        </div>
+        <h3 class="tx" id="s8_t1_r1.1" style="display: none;">"And that is right and good as well. You have nothing to prove to anyone."</h3>
+        <h3 class="tx" id="s8_t1_r1.2" style="display: none;">"You know yourself well, and you don't need a silly quiz to tell you who you are."</h3>
+        <h3 class="tx" id="s8_t1_r1.3" style="display: none;">"Or perhaps you simply forgot because you didn't place much importance in it."</h3>
+        <h3 class="tx" id="s8_t1_r1.4" style="display: none;">"Then, I suppose you won't be placing much credence into my words either."</h3>
+        <h3 class="tx" id="s8_t1_r1.5" style="display: none;">"I wonder: is that perhaps for better, or for worse?"</h3>
+        <h3 class="tx" id="s8_t1_r2.1" style="display: none;">"A natural leader. You likely find yourself at the center of a group."</h3>
+        <h3 class="tx" id="s8_t1_r2.2" style="display: none;">"Do you like that feeling of control? Or are you burdened by it?"</h3>
+        <h3 class="tx" id="s8_t1_r2.3" style="display: none;">"It would do good for you to stop being afraid of trust."</h3>
+        <h3 class="tx" id="s8_t1_r2.4" style="display: none;">"But well, that might not be my place to meddle."</h3>
+        <h3 class="tx" id="s8_t1_r3.1" style="display: none;">"An introspective one. You like to pay attention to details. To make sure everything goes according to plan."</h3>
+        <h3 class="tx" id="s8_t1_r3.2" style="display: none;">"But it never really does, does it? Does that unnerve you?"</h3>
+        <h3 class="tx" id="s8_t1_r3.3" style="display: none;">"A moment of relaxation may be in your favor."</h3>
+        <h3 class="tx" id="s8_t1_r3.4" style="display: none;">"But you won't listen to me, will you?"</h3>
+        <h3 class="tx" id="s8_t1_r4.1" style="display: none;">"You like to act on instinct. A carefree spirit."</h3>
+        <h3 class="tx" id="s8_t1_r4.2" style="display: none;">"Or at least, that's what others may think. But that's not necessarily the case, is it?"</h3>
+        <h3 class="tx" id="s8_t1_r4.3" style="display: none;">"The truth is that you are thinking. Acting first is a strategy that you've settled on."</h3>
+        <h3 class="tx" id="s8_t1_r4.4" style="display: none;">"You know what I'm talking about."</h3>
+        <h3 class="tx" id="s8_t1_r5.1" style="display: none;">"You keep a flexible mindset. A valuable quality indeed."</h3>
+        <h3 class="tx" id="s8_t1_r5.2" style="display: none;">"But why is that you think so much, but act so little?"</h3>
+        <h3 class="tx" id="s8_t1_r5.3" style="display: none;">"What are you afraid of?"</h3>
+        <h3 class="tx" id="s8_t1_r5.4" style="display: none;">"Take the leap. You never know what may be giving chase during your inactivity."</h3>
+    </div>
 </div>
 
 <script>
@@ -516,6 +554,7 @@ s6_r11.addEventListener("click", async () => {
     tx_s7.style.display = "block";
     s6_rs11.style.display = "block";
     s7_t1_r11.style.display = "block";
+    despair_pts += 3;
 });
 
 s7_t1_r11.addEventListener("click", async () => {
@@ -562,6 +601,7 @@ s6_r13.addEventListener("click", async () => {
     tx_s7.style.display = "block";
     s6_rs13.style.display = "block";
     s7_t1_r31.style.display = "block";
+    despair_pts += 1;
 });
 
 s7_t1_r31.addEventListener("click", async () => {
@@ -583,6 +623,197 @@ s7_t1_r34.addEventListener("click", async () => {
     s7_t1_r35.style.display = "block";
     s7_t1_r34.style.cursor = "default";
 });
+
+//Scene 8 paths
+    //text
+const tx_s8 = document.getElementById("tx_s8")
+const s8_t1 = document.getElementById("s8_t1")
+
+    //response
+const rs_s81 = document.getElementById("rs_s8.1")
+const s8_r11 = document.getElementById("s8_r1.1")
+const s8_r12 = document.getElementById("s8_r1.2")
+const s8_r13 = document.getElementById("s8_r1.3")
+const s8_r14 = document.getElementById("s8_r1.4")
+const s8_r15 = document.getElementById("s8_r1.5")
+
+    //post-response
+const rs_sl_s81 = document.getElementById("rs_sl_s8.1")
+const s8_rs11 = document.getElementById("s8_rs1.1")
+const s8_rs12 = document.getElementById("s8_rs1.2")
+const s8_rs13 = document.getElementById("s8_rs1.3")
+const s8_rs14 = document.getElementById("s8_rs1.4")
+const s8_rs15 = document.getElementById("s8_rs1.5")
+
+    //post-response text
+const s8_t1_r11 = document.getElementById("s8_t1_r1.1")
+const s8_t1_r12 = document.getElementById("s8_t1_r1.2")
+const s8_t1_r13 = document.getElementById("s8_t1_r1.3")
+const s8_t1_r14 = document.getElementById("s8_t1_r1.4")
+const s8_t1_r15 = document.getElementById("s8_t1_r1.5")
+
+const s8_t1_r21 = document.getElementById("s8_t1_r2.1")
+const s8_t1_r22 = document.getElementById("s8_t1_r2.2")
+const s8_t1_r23 = document.getElementById("s8_t1_r2.3")
+const s8_t1_r24 = document.getElementById("s8_t1_r2.4")
+
+const s8_t1_r31 = document.getElementById("s8_t1_r3.1")
+const s8_t1_r32 = document.getElementById("s8_t1_r3.2")
+const s8_t1_r33 = document.getElementById("s8_t1_r3.3")
+const s8_t1_r34 = document.getElementById("s8_t1_r3.4")
+
+const s8_t1_r41 = document.getElementById("s8_t1_r4.1")
+const s8_t1_r42 = document.getElementById("s8_t1_r4.2")
+const s8_t1_r43 = document.getElementById("s8_t1_r4.3")
+const s8_t1_r44 = document.getElementById("s8_t1_r4.4")
+
+const s8_t1_r51 = document.getElementById("s8_t1_r5.1")
+const s8_t1_r52 = document.getElementById("s8_t1_r5.2")
+const s8_t1_r53 = document.getElementById("s8_t1_r5.3")
+const s8_t1_r54 = document.getElementById("s8_t1_r5.4")
+
+s7_t1_r14.addEventListener("click", async () => {
+    tx_s7.style.display = "none";
+    tx_s8.style.display = "block";
+});
+
+s7_t1_r24.addEventListener("click", async () => {
+    tx_s7.style.display = "none";
+    tx_s8.style.display = "block";
+});
+
+s7_t1_r35.addEventListener("click", async () => {
+    tx_s7.style.display = "none";
+    tx_s8.style.display = "block";
+});
+
+s8_t1.addEventListener("click", async () => {
+    rs_s81.style.display = "block";
+});
+
+    //Response 1
+s8_r11.addEventListener("click", async () => {
+    rs_s81.style.display = "none";
+    rs_sl_s81.style.display = "block";
+    s8_rs11.style.display = "block";
+    s8_t1_r11.style.display = "block";
+});
+
+s8_t1_r11.addEventListener("click", async () => {
+    s8_t1_r12.style.display = "block";
+    s8_t1_r11.style.cursor = "default";
+});
+
+s8_t1_r12.addEventListener("click", async () => {
+    s8_t1_r13.style.display = "block";
+    s8_t1_r12.style.cursor = "default";
+});
+
+s8_t1_r13.addEventListener("click", async () => {
+    s8_t1_r14.style.display = "block";
+    s8_t1_r13.style.cursor = "default";
+});
+
+s8_t1_r14.addEventListener("click", async () => {
+    s8_t1_r15.style.display = "block";
+    s8_t1_r14.style.cursor = "default";
+});
+
+    //Response 2
+s8_r12.addEventListener("click", async () => {
+    rs_s81.style.display = "none";
+    rs_sl_s81.style.display = "block";
+    s8_rs12.style.display = "block";
+    s8_t1_r21.style.display = "block";
+    despair_pts += 3;
+});
+
+s8_t1_r21.addEventListener("click", async () => {
+    s8_t1_r22.style.display = "block";
+    s8_t1_r21.style.cursor = "default";
+});
+
+s8_t1_r22.addEventListener("click", async () => {
+    s8_t1_r23.style.display = "block";
+    s8_t1_r22.style.cursor = "default";
+});
+
+s8_t1_r23.addEventListener("click", async () => {
+    s8_t1_r24.style.display = "block";
+    s8_t1_r23.style.cursor = "default";
+});
+
+    //Response 3
+s8_r13.addEventListener("click", async () => {
+    rs_s81.style.display = "none";
+    rs_sl_s81.style.display = "block";
+    s8_rs13.style.display = "block";
+    s8_t1_r31.style.display = "block";
+    despair_pts += 3;
+});
+
+s8_t1_r31.addEventListener("click", async () => {
+    s8_t1_r32.style.display = "block";
+    s8_t1_r31.style.cursor = "default";
+});
+
+s8_t1_r32.addEventListener("click", async () => {
+    s8_t1_r33.style.display = "block";
+    s8_t1_r32.style.cursor = "default";
+});
+
+s8_t1_r33.addEventListener("click", async () => {
+    s8_t1_r34.style.display = "block";
+    s8_t1_r33.style.cursor = "default";
+});
+
+    //Response 4
+s8_r14.addEventListener("click", async () => {
+    rs_s81.style.display = "none";
+    rs_sl_s81.style.display = "block";
+    s8_rs14.style.display = "block";
+    s8_t1_r41.style.display = "block";
+    despair_pts += 1;
+});
+
+s8_t1_r41.addEventListener("click", async () => {
+    s8_t1_r42.style.display = "block";
+    s8_t1_r41.style.cursor = "default";
+});
+
+s8_t1_r42.addEventListener("click", async () => {
+    s8_t1_r43.style.display = "block";
+    s8_t1_r42.style.cursor = "default";
+});
+
+s8_t1_r43.addEventListener("click", async () => {
+    s8_t1_r44.style.display = "block";
+    s8_t1_r43.style.cursor = "default";
+});
+
+    //Response 5
+s8_r15.addEventListener("click", async () => {
+    rs_s81.style.display = "none";
+    rs_sl_s81.style.display = "block";
+    s8_rs15.style.display = "block";
+    s8_t1_r51.style.display = "block";
+});
+
+s8_t1_r51.addEventListener("click", async () => {
+    s8_t1_r52.style.display = "block";
+    s8_t1_r51.style.cursor = "default";
+});
+
+s8_t1_r52.addEventListener("click", async () => {
+    s8_t1_r53.style.display = "block";
+    s8_t1_r52.style.cursor = "default";
+});
+
+s8_t1_r53.addEventListener("click", async () => {
+    s8_t1_r54.style.display = "block";
+    s8_t1_r53.style.cursor = "default";
+});
+
 
 </script>
 
