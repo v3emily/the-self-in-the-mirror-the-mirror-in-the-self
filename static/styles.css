@@ -96,6 +96,52 @@ body {
     animation-duration: 2000ms;
 }
 
+/* Dialogue page styling */
+
+.main-dialogue {
+    background-image: url('../static/assets/bg.PNG');
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    background-position: center;
+}
+
+.text {
+    margin: 10vh;
+    font-size: large;
+    max-width: 80vw;
+    white-space: normal;
+    color: rgb(214, 214, 214);
+}
+
+.response {
+    display: flex;
+    flex-direction: row;
+    gap: 5vw;
+    margin-top: 2vh;
+    margin-left: 3vw;
+    align-items: center;
+    color: rgb(90, 81, 135);
+}
+
+.rs:hover {
+    cursor: pointer;
+    color: rgb(130, 117, 195);
+}
+
+.response-select {
+    color: rgb(130, 117, 195);
+    margin-left: 3vw;
+}
+
+.tx {
+    white-space: normal;
+}
+
+.tx:hover {
+    cursor: pointer;
+}
+
 /* Animations */
 @keyframes fadeIn {
   from {

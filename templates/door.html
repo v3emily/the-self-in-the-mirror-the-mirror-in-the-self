@@ -15,8 +15,15 @@
 const door_closed = document.getElementById("door_closed");
 const s1_text1 = document.getElementById("s1_text1");
 
+let first_click = false
+
 door_closed.addEventListener("click", async () => {
-    s1_text1.style.display = "block";
+    if (!first_click){
+        s1_text1.style.display = "block";
+        first_click = true;
+    } else {
+        window.location.href="dialogue.html";
+    }
 });
 
 function add_shake() {

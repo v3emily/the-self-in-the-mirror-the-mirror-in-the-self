@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>The Mirror</title>
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+<body>
+    <!--Id Nomenclature:
+    Text block: tx_s[scene number]
+        Individual text: s[scene number]_t[text block]_r[response].tx[text order]
+    Response block: rs_s[scene number]
+        Response choice: s[scene number]_r[response block].[response order]
+    Response block (selected): rs_sl_s[scene number]
+        Response selection: s[scene number]_rs[response block].[response choice]-->
+<div class="main-dialogue">
+    <div class="text" id="tx_s1">
+        <h3 class="tx" id="s1_t1" style="cursor: default;">"Tsk, tsk. You are not ready yet, no. There's much more that must be discovered before you may face what lies beyond."</h3>
+        <div class="response" id="rs_s1.1">
+            <h3 class="rs" id="s1_r1.1">Discovered?</h3>
+            <h3 class="rs" id="s1_r1.2">What lies beyond?</h3>
+        </div>
+        <div class="response-select" id="rs_sl_s1" style="display: none;">
+            <h3 class="rs-sl" id="s1_rs1.1" style="display: none;">Discovered?</h3>
+            <h3 class="rs-sl" id="s1_rs1.2" style="display: none;">What lies beyond?</h3>
+        </div>
+        <h3 class="tx" id="s1_t2_r1.1" style="display: none;">"About yourself, of course. What else could be more important?"</h3>
+        <h3 class="tx" id="s1_t2_r2.1" style="display: none;">"...did i or did i not <i>just</i> state that you are not ready to hear more about that?"</h3>
+        <h3 class="tx" id="s1_t2_r2.2" style="display: none;">"Well, I suppose a little more detail wouldn't hurt. To motivate you."</h3>
+        <h3 class="tx" id="s1_t2_r2.3" style="display: none;">"All you need to know for now is that everything you've been working towards is for is there."</h3>
+        <div class="response" id="rs_s1.2" style="display: none;">
+            <h3 class="rs" id="s1_r2" style="display: none;">I understand. How can I start this 'discovering', or whatever?</h3>
+        </div>
+    </div>
+    <div class="text" id="tx_s2" style="display: none;">
+        <div class="response-select" id="rs_sl_s2" style="cursor: default;">
+            <h3 class="rs-sl" id="s1_rs2">I understand. How can I start this 'discovering', or whatever?</h3>
+        </div>
+        <h3 class="tx" id="s2_t1.1">"Aha! Now we are asking about relevant matters."</h3>
+        <h3 class="tx" id="s2_t1.2" style="display: none;">"All that I require from you, is an answer."</h3>
+        <h3 class="tx" id="s2_t1.3" style="display: none;">"Simple, isn't it? I ask. You answer."</h3>
+        <div class="response" id="rs_s2" style="display: none;">
+            <h3 class="rs" id="s2_r1">...okay then. Let's get started.</h3>
+        </div>
+    </div>
+    <div class="text" id="tx_s3" style="display: none;">
+        <div class="response-select" id="rs_sl_s2" style="cursor: default;">
+            <h3 class="rs-sl" id="s2_rs1">...okay then. Let's get started.</h3>
+        </div>
+        <h3 class="tx" id="s3_t1.1">"Yes, yes. We'll start simple. Please, tell me:"</h3>
+        <h3 class="tx" id="s3_t1.2" style="display: none;">What word would people use to describe you?"</h3>
+        <div class="response" id="rs_s3.1" style="display: none;">
+            <h3 class="rs" id="s3_r1.1">Funny</h3>
+            <h3 class="rs" id="s3_r1.2">Outgoing</h3>
+            <h3 class="rs" id="s3_r1.3">Smart</h3>
+            <h3 class="rs" id="s3_r1.4">Nice</h3>
+            <h3 class="rs" id="s3_r1.5">Motivated</h3>
+            <h3 class="rs" id="s3_r1.6">Hardworking</h3>
+        </div>
+        <div class="response-select" id="rs_sl_s3" style="display: none;">
+            <h3 class="rs-sl" id="s3_rs1.1" style="display: none;">Funny</h3>
+            <h3 class="rs-sl" id="s3_rs1.2" style="display: none;">Outgoing</h3>
+            <h3 class="rs-sl" id="s3_rs1.3" style="display: none;">Smart</h3>
+            <h3 class="rs-sl" id="s3_rs1.4" style="display: none;">Nice</h3>
+            <h3 class="rs-sl" id="s3_rs1.5" style="display: none;">Motivated</h3>
+            <h3 class="rs-sl" id="s3_rs1.6" style="display: none;">Hardworking</h3>
+        </div>
+        <h3 class="tx" id="s3_t2.1" style="display: none;">"Oh, and did I mention that all answers are <u>final</u>? After all, certainly if you ever believed your choice to be correct, there must have been a reason."</h3>
+        <h3 class="tx" id="s3_t2.2" style="display: none;">"Well, now you know. Choose carefully."</h3>
+        <div class="response" id="rs_s3.2" style="display: none;">
+            <h3 class="rs" id="s3_r2">. . .</h3>
+        </div>
+    </div>
+</div>
+
+<script>
+//Scene 1 paths
+const tx_s1 = document.getElementById("tx_s1")
+    //response choices
+const r_s1_1 = document.getElementById("rs_s1.1")
+const s1_r1_1 = document.getElementById("s1_r1.1")
+const s1_r1_2 = document.getElementById("s1_r1.2")
+const r_s1_2 = document.getElementById("rs_s1.2")
+const s1_r2 = document.getElementById("s1_r2")
+
+    //post-response
+const rs_s1 = document.getElementById("rs_sl_s1")
+const s1_rs1_1 = document.getElementById("s1_rs1.1")
+const s1_rs1_2 = document.getElementById("s1_rs1.2")
+
+    //post-response text
+const s1_t2_r11 = document.getElementById("s1_t2_r1.1")
+const s1_t2_r21 = document.getElementById("s1_t2_r2.1")
+const s1_t2_r22 = document.getElementById("s1_t2_r2.2")
+const s1_t2_r23 = document.getElementById("s1_t2_r2.3")
+
+    //timer
+    let elapsedTime = 0;
+    let isRunning = false;
+
+    function startStop() {
+        if (isRunning) {
+        elapsedTime += Date.now() - startTime;
+        isRunning = false;
+        console.log(elapsedTime)
+        } else {
+            startTime = Date.now();
+            isRunning = true;
+            console.log('time started')
+        }
+    }
+
+    //Response 1
+s1_r1_1.addEventListener("click", async () => {
+    r_s1_1.style.display = "none";
+    rs_s1.style.display = "block";
+    s1_rs1_1.style.display = "block";
+    s1_t2_r11.style.display = "block";
+    startStop();
+});
+s1_t2_r11.addEventListener("click", async () => {
+    r_s1_2.style.display = "block";
+    s1_r2.style.display = "block";
+    s1_t2_r11.style.cursor = "default";
+});
+    //Response 2
+s1_r1_2.addEventListener("click", async () => {
+    r_s1_1.style.display = "none";
+    rs_s1.style.display = "block";
+    s1_rs1_2.style.display = "block";
+    s1_t2_r21.style.display = "block";
+    startStop();
+});
+s1_t2_r21.addEventListener("click", async () => {
+    s1_t2_r22.style.display = "block";
+    s1_t2_r21.style.cursor = "default";
+});
+s1_t2_r22.addEventListener("click", async () => {
+    s1_t2_r23.style.display = "block";
+    s1_t2_r22.style.cursor = "default";
+});
+s1_t2_r23.addEventListener("click", async () => {
+    r_s1_2.style.display = "block";
+    s1_r2.style.display = "block";
+    s1_t2_r11.style.cursor = "default";
+});
+
+//Scene 2 paths
+    //text
+const tx_s2 = document.getElementById("tx_s2")
+const s2_t11 = document.getElementById("s2_t1.1")
+const s2_t12 = document.getElementById("s2_t1.2")
+const s2_t13 = document.getElementById("s2_t1.3")
+
+    //response
+const rs_s2 = document.getElementById("rs_s2")
+
+r_s1_2.addEventListener("click", async () => {
+    tx_s1.style.display = "none";
+    tx_s2.style.display = "block";
+    r_s1_2.style.cursor = "default";
+});
+s2_t11.addEventListener("click", async () => {
+    s2_t12.style.display = "block";
+    s2_t11.style.cursor = "default";
+});
+s2_t12.addEventListener("click", async () => {
+    s2_t13.style.display = "block";
+    s2_t12.style.cursor = "default";
+});
+s2_t13.addEventListener("click", async () => {
+    rs_s2.style.display = "block";
+    s2_t13.style.cursor = "default";
+});
+
+//Scene 3 paths
+    //text
+const tx_s3 = document.getElementById("tx_s3")
+const s3_t11 = document.getElementById("s3_t1.1")
+const s3_t12 = document.getElementById("s3_t1.2")
+const s2_rs1 = document.getElementById("s2_rs1")
+
+    //response
+const rs_s31 = document.getElementById("rs_s3.1")
+const s3_r1_1 = document.getElementById("s3_r1.1")
+const s3_r1_2 = document.getElementById("s3_r1.2")
+const s3_r1_3 = document.getElementById("s3_r1.3")
+const s3_r1_4 = document.getElementById("s3_r1.4")
+const s3_r1_5 = document.getElementById("s3_r1.5")
+const s3_r1_6 = document.getElementById("s3_r1.6")
+const rs_s32 = document.getElementById("rs_s3.2")
+const s3_r2 = document.getElementById("s3_r2")
+
+    //post-response
+const rs_sl_s3 = document.getElementById("rs_sl_s3")
+const s3_rs11 = document.getElementById("s3_rs1.1")
+const s3_rs12 = document.getElementById("s3_rs1.2")
+const s3_rs13 = document.getElementById("s3_rs1.3")
+const s3_rs14 = document.getElementById("s3_rs1.4")
+const s3_rs15 = document.getElementById("s3_rs1.5")
+const s3_rs16 = document.getElementById("s3_rs1.6")
+
+    //post-response text
+const s3_t21 = document.getElementById("s3_t2.1")
+const s3_t22 = document.getElementById("s3_t2.2")
+
+rs_s2.addEventListener("click", async () => {
+    tx_s2.style.display = "none";
+    tx_s3.style.display = "block";
+    s2_rs1.style.cursor = "default";
+});
+
+s3_t11.addEventListener("click", async () => {
+    s3_t12.style.display = "block";
+    s3_t11.style.cursor = "default";
+});
+
+s3_t12.addEventListener("click", async () => {
+    rs_s31.style.display = "block";
+    s3_t12.style.cursor = "default";
+});
+
+    //Response 1
+s3_r1_1.addEventListener("click", async () => {
+    rs_s31.style.display = "none";
+    rs_sl_s3.style.display = "block";
+    s3_rs11.style.display = "block";
+    s3_t21.style.display = "block";
+});
+
+    //Response 2
+s3_r1_2.addEventListener("click", async () => {
+    rs_s31.style.display = "none";
+    rs_sl_s3.style.display = "block";
+    s3_rs12.style.display = "block";
+    s3_t21.style.display = "block";
+});
+
+    //Response 3
+s3_r1_3.addEventListener("click", async () => {
+    rs_s31.style.display = "none";
+    rs_sl_s3.style.display = "block";
+    s3_rs13.style.display = "block";
+    s3_t21.style.display = "block";
+});
+
+    //Response 4
+s3_r1_4.addEventListener("click", async () => {
+    rs_s31.style.display = "none";
+    rs_sl_s3.style.display = "block";
+    s3_rs14.style.display = "block";
+    s3_t21.style.display = "block";
+});
+
+    //Response 5
+s3_r1_5.addEventListener("click", async () => {
+    rs_s31.style.display = "none";
+    rs_sl_s3.style.display = "block";
+    s3_rs15.style.display = "block";
+    s3_t21.style.display = "block";
+});
+
+    //Response 6
+s3_r1_6.addEventListener("click", async () => {
+    rs_s31.style.display = "none";
+    rs_sl_s3.style.display = "block";
+    s3_rs16.style.display = "block";
+    s3_t21.style.display = "block";
+});
+
+s3_t21.addEventListener("click", async () => {
+    s3_t22.style.display = "block";
+    s3_t21.style.cursor = "default";
+});
+
+s3_t22.addEventListener("click", async () => {
+    rs_s32.style.display = "block";
+    s3_r2.style.display = "block";
+    s3_t22.style.cursor = "default";
+});
+
+</script>
+
+</body>
+</html>
