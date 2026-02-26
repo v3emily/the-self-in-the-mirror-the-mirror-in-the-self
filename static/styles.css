@@ -249,6 +249,15 @@ body {
     z-index: 1;
 }
 
+.ftr {
+    color: rgb(33, 33, 33);
+}
+
+.frr {
+    color: rgb(0, 0, 0);
+    margin-left: 3vw;
+}
+
 /* Animations */
 @keyframes fadeIn {
   from {
