@@ -15,11 +15,12 @@ View documentation here: https://docs.google.com/document/d/1vrkoLLt0eQEPww1GSLJ
 ### 3. Running the program
 
 3a. Open terminal if not already open<br>
-3b. Start local host using python3 -m http.server<br>
-    Something like this sound appear in your terminal:<br>
+3b. Install python3 on the device (if not already) <br>
+3c. Start local host using python3 -m http.server <br>
+    Something like this sound appear in your terminal: <br>
     Serving HTTP on :: port 8000 (http://[::]:8000/) ... <br>
-3c. Open a tab in your browser <br>
-3d. Navigate to http://localhost:8000/templates/mirror.html (or whatever local host your system is using)
-3e. Click on the mirror to begin the experience
+3d. Open a tab in your browser <br>
+3e. Navigate to http://localhost:8000/templates/mirror.html (or whatever local host your system is using) <br>
+3f. Click on the mirror to begin the experience
 
 ## Thank you for visiting! This is my very first game that I fully planned, wrote, and implemented on my own! I am quite proud of it and I hope that this is the first of many :)
